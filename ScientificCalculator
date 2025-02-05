@@ -1,0 +1,66 @@
+import math
+
+i = 1
+
+current_result = 0
+
+result_count = 0
+result_sum_list = []
+
+while i != 0:
+
+    print(f"Current Result: {current_result}")
+    def menu():
+        print(f"\n Current Result: {current_result}"
+              f"\n Calculator Menu"
+              f"\n ---------------"
+              f"\n 0. Exit Program"
+              f"\n 1. Addition"
+              f"\n 2. Subtraction"
+              f"\n 3. Multiplication"
+              f"\n 4. Division"
+              f"\n 5. Exponentiation"
+              f"\n 6. Logarithm "
+              f"\n 7. Display Average"
+              f"\n ")
+
+
+    menu()
+
+    menu_selection = int(input("Enter Menu Selection: "))
+
+    first_operand = float(input("Enter first operand: "))
+    second_operand = float(input("Enter second operand: "))
+
+    if menu_selection <= 6:
+        if menu_selection == 0:
+            print("Exiting........")
+            exit()
+        elif menu_selection == 1:
+            result = first_operand + second_operand
+        elif menu_selection == 2:
+            result = first_operand - second_operand
+        elif menu_selection == 3:
+            result = first_operand * second_operand
+        elif menu_selection == 4:
+            result = first_operand / second_operand
+        elif menu_selection == 5:
+            result = first_operand ** second_operand
+        elif menu_selection == 6:
+            result = math.log(second_operand, first_operand)
+        elif menu_selection == 7:
+            result_sum = sum(result_sum_list)
+            average_results = result_sum / result_count
+
+            print(f"Sum of calculations: {result_sum} "
+                  f"\n Number of calculations: {result_count} "
+                  f"\n Average of calculations: {average_results}")
+        else:
+            result = 0
+
+        current_result = result
+        result_sum_list.append(result)
+        result_count += 1
+
+    else:
+        print("Error")
